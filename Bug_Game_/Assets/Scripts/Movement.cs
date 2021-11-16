@@ -29,10 +29,11 @@ public class Movement : MonoBehaviour
             rb.AddRelativeForce(Vector3.forward * thrust,ForceMode.Impulse);
         }
 
-        // if (Input.GetKey(KeyCode.S))
-        // {
-        //     rb.AddForce(0,0, -thrust, ForceMode.Impulse);
-        // }
+        if (Input.GetKey(KeyCode.S))
+        {
+           //rb.AddForce(0,0,thrust,ForceMode.Impulse);
+            rb.AddRelativeForce(Vector3.back * thrust,ForceMode.Impulse);
+        }
         if (Input.GetKey(KeyCode.D))
         {
             Quaternion deltaRotation = Quaternion.Euler(EulerAngleVelocity * Time.fixedDeltaTime);
